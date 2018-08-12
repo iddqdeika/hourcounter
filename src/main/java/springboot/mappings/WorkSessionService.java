@@ -19,10 +19,6 @@ public class WorkSessionService {
 
 
 
-    @RequestMapping(value = "/page", method = RequestMethod.GET)
-    public String main(ModelMap model){
-        return "page";
-    }
 
     @RequestMapping(value = "/result", method = RequestMethod.GET)
     public String resultOfSession(ModelMap model, @RequestParam("user") String login){

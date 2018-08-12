@@ -22,7 +22,7 @@
 
         function getResult(){
             var user = document.counter.username.value;
-            ajax_get('http://localhost:8080/worksession/result?user=' + user, function(data) {
+            ajax_get('/worksession/result?user=' + user, function(data) {
                 var result = data["sessions-sum"];
                 document.getElementById("text").innerHTML = "отработал: " + result;
             });
@@ -30,13 +30,13 @@
 
         function startSession(){
             var user = document.counter.username.value;
-            ajax_get('http://localhost:8080/worksession/start?user=' + user, function(data) {
+            ajax_get('/worksession/start?user=' + user, function(data) {
             });
         }
 
         function stopSession(){
             var user = document.counter.username.value;
-            ajax_get('http://localhost:8080/worksession/stop?user=' + user, function(data) {
+            ajax_get('/worksession/stop?user=' + user, function(data) {
             });
         }
     </script>
