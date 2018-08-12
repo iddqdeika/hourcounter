@@ -22,14 +22,17 @@ public class Application {
 
 
         dbstring = System.getenv("MONGOHQ_URL");
-        Mongo mongo = new Mongo();
-        DB db = mongo.getDB(dataBaseName);
+        try {
+            Mongo mongo = new Mongo();
+            DB db = mongo.getDB(dataBaseName);
 
-        stepCollection = db.getCollection(dataBaseCollectionName);
-        if (stepCollection == null){
-            stepCollection = db.createCollection(dataBaseCollectionName,null);
+            stepCollection = db.getCollection(dataBaseCollectionName);
+            if (stepCollection == null) {
+                stepCollection = db.createCollection(dataBaseCollectionName, null);
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
         }
-
         SpringApplication.run(Application.class);
     }
 
