@@ -14,7 +14,7 @@ import java.net.URISyntaxException;
 public class Application {
 
     public static DBCollection stepCollection = null;
-    public static String dbstring;
+    public static String dbstring = null;
 
     public static void main(String[] args){
         String dataBaseName = System.getenv("MONGOHQ_URL");
