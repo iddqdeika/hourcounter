@@ -44,7 +44,7 @@
 <body>
 <h1 id="header">Work time counter</h1>
 <hr>
-<div id="text">Let's count overall work length</div>
+<div id="text">${message}</div>
 <FORM NAME="counter">
     <TABLE>
         <TR><TD><B>User login:<B></TD>

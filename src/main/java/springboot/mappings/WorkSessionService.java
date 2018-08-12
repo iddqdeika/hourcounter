@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import springboot.dbObjects.UserSession;
 
 
+import static springboot.Application.dbstring;
 import static springboot.Application.stepCollection;
 
 @Controller
@@ -18,6 +19,7 @@ public class WorkSessionService {
 
     @RequestMapping(value = "/page", method = RequestMethod.GET)
     public String main(ModelMap model){
+        model.addAttribute("message", dbstring);
         return "page";
     }
 
