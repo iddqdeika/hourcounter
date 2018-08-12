@@ -14,13 +14,13 @@ public class Application {
     public static String dbstring = null;
 
     public static void main(String[] args){
-        String dataBaseName = System.getenv("MONGOHQ_URL");
+        String dataBaseName = System.getenv("MONGODB_URI");
         String dataBaseCollectionName = "hourcount";
 
 
-        dbstring = System.getenv("MONGOHQ_URL");
+        dbstring = System.getenv("MONGODB_URI");
         try {
-            MongoURI uri = new MongoURI(System.getenv("MONGOHQ_URL"));
+            MongoURI uri = new MongoURI(System.getenv("MONGODB_URI"));
 
             DB db = uri.connectDB();
 
