@@ -1,9 +1,6 @@
 package springboot;
 
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.Mongo;
-import com.mongodb.MongoURI;
+import com.mongodb.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -23,8 +20,9 @@ public class Application {
 
         dbstring = System.getenv("MONGOHQ_URL");
         try {
-            Mongo mongo = new Mongo();
-            DB db = mongo.getDB(dataBaseName);
+            MongoURI uri = new MongoURI(System.getenv("MONGOHQ_URL"));
+
+            DB db = uri.connectDB();
 
             stepCollection = db.getCollection(dataBaseCollectionName);
             if (stepCollection == null) {
@@ -33,7 +31,7 @@ public class Application {
         }catch(Exception ex){
             ex.printStackTrace();
         }
-        SpringApplication.run(Application.class);
+        //SpringApplication.run(Application.class);
     }
 
 }
