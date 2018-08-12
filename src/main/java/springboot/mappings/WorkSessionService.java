@@ -17,9 +17,10 @@ import static springboot.Application.stepCollection;
 @RequestMapping(value = "/worksession", method = RequestMethod.GET)
 public class WorkSessionService {
 
+
+
     @RequestMapping(value = "/page", method = RequestMethod.GET)
     public String main(ModelMap model){
-        model.addAttribute("message", dbstring);
         return "page";
     }
 
