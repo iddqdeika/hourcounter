@@ -31,7 +31,7 @@ public class Application {
         }catch(Exception ex){
             ex.printStackTrace();
         }
-        //SpringApplication.run(Application.class);
+        SpringApplication.run(Application.class);
     }
 
 }
